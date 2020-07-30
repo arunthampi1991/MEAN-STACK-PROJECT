@@ -1,0 +1,54 @@
+<div class="card" *ngIf="loggedIn()" >
+    <div class="card-header" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: x-large; text-align: center;">{{title}}</div>
+    <div class="card-body" >
+        <div class="table-responsive"  >
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-outline-success" (click)="toggleImage()">{{showImage? "Hide" : "Show"}} Image</button>
+                        </th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Date of Birth </th>
+                        <th>Mark in English</th>
+                        <th>Mark in Maths</th>
+                        <th>Mark in Science</th>
+                        <th>Total Marks</th>
+                        <th>Percentage</th>
+                       
+                        <th *ngIf="loggedIn()">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students">
+                        <td>
+                            <img *ngIf = "showImage"
+                            [src] = "student.imageUrl"
+                            [title] = "student.studentName"
+                            [style.width.px] = "imageWidth"
+                            [style.height.px] = "imageHeight"
+                            [style.margin.px] = "imageMargin">
+                        </td>
+                         
+                        <td>{{student.studentId}}</td>
+                        <td>{{student.studentName}}</td>
+                        <td>{{student.studentDob}}</td>
+                        <td>{{student.markEng}}/100</td>
+                        <td>{{student.markMath}}/100</td>
+                        <td>{{student.markSci}}/100</td>
+                        
+                        <td>{{student.markSci + student.markEng + student.markMath }}/300</td>
+
+                        <td>{{((student.markSci + student.markEng + student.markMath)/3).toFixed(2)}} %</td>
+                        
+                        <td>
+                           <button class="btn btn-primary" routerLink='/edit/{{student._id}}'  *ngIf="loggedIn()">Edit</button>
+                           <button class="btn btn-danger" style="margin-left: 10pt;" *ngIf="loggedIn()" (click)="Delete(student._id)">Delete</button> 
+                        </td>
+                    </tr>
+                </tbody>    
+            </table>
+        </div>
+    </div>
+</div>

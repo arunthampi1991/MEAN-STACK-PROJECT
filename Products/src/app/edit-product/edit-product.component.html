@@ -1,0 +1,48 @@
+<div class='card'>
+    <form (ngSubmit)="UpdateProduct()">
+        <div class='card-header'>
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Student Id</label></td>
+                            <td><input type="text" name="p_id" [(ngModel)]="editItem.studentId"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Student Name</label></td>
+                            <td><input type="text" name="p_name" [(ngModel)]="editItem.studentName"/> </td>
+                        </tr>
+                      
+                        <tr>
+                            <td><label>Student Date of Birth</label></td>
+                            <td><input type="text" name="p_date" [(ngModel)]="editItem.studentDob"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Mark in English</label></td>
+                            <td><input type="text" name="p_marke" [(ngModel)]="editItem.markEng"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Mark in Maths</label></td>
+                            <td><input type="text" name="p_markm" [(ngModel)]="editItem.markMath"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Mark in Science</label></td>
+                            <td><input type="text" name="p_marks" [(ngModel)]="editItem.markSci"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Student Image Url</label></td>
+                            <td><input type="text" name="p_image" [(ngModel)]="editItem.imageUrl"/> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Submit"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

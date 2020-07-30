@@ -1,0 +1,51 @@
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center text-white mb-4">Teacher/Admin Register</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <span class="anchor" id="formLogin"></span>
+
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h4 class="mb-0">Sign-Up Here</h4> 
+                        </div>
+                        <div class="card-body">
+                            <form class="form" #userLogin ="ngForm" (ngSubmit)="registerUser()" >
+                                <div class="form-group">
+                                    <label for="uname1">Username</label>
+                                    <input type="text" [(ngModel)]="registeredUser.email" name="email"  #email="ngModel" [class.is-invalid]="email.invalid && email.touched"   class="form-control form-control-lg rounded-0 "  id="uname1" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                              <small class="text-danger" [class.d-none] = "email.valid || email.touched">
+                                 Enter a valid Email
+                              </small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" [(ngModel)]="registeredUser.password" name="password" #password ="ngModel" [class.is-invalid]="password.invalid && password.touched" class="form-control form-control-lg rounded-0" id="pwd1" minlength="6" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" autocomplete="new-password">
+                                    <small class="text-danger" [class.d-none] = "password.valid || password.touched">
+                                        Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters
+                                     </small>
+                                </div>
+                                
+                               
+                                <button type="submit" [disabled]="userLogin.form.invalid"  class="btn btn-primary btn-lg float-right">Register</button>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                    <a style="padding: 10px;color: white;" routerLink="/login" routerLinkActive="active"  >Already registered? Login Here</a>
+                </div>
+
+             
+            </div>
+            <!--/row-->
+       
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

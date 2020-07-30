@@ -1,0 +1,50 @@
+
+
+
+<div class="container py-5">
+    <div class="row">
+        
+        <div class="col-md-12">
+            <h2 class="text-center text-white mb-4">Teacher/Admin Login</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <span class="anchor" id="formLogin"></span>
+
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h4 class="mb-0">Sign-In Here</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off" id="formLogin">
+                                <div class="form-group">
+                                    <label for="uname1">Email</label>
+                                    <input type="email" [(ngModel)]="loginUserDetails.email" name="email"  class="form-control form-control-lg rounded-0"  id="uname1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" [(ngModel)]="loginUserDetails.password" name="password" class="form-control form-control-lg rounded-0" id="pwd1" required >
+                                </div>
+                               
+                                <button type="button" (click)="loginUser()" class="btn btn-success btn-lg float-right">Login</button>
+                             
+                            </form>
+                           
+                        </div>
+                       
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                    <a style="padding: 10px; color: white;" routerLink="/register" routerLinkActive="active"  >Haven't registered as teacher? Click here</a>
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

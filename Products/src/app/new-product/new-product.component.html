@@ -1,0 +1,50 @@
+<div class='card'>
+    <form (ngSubmit)="AddProduct()">
+        <div class='card-header' style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: x-large; text-align: center;" >
+            {{title}}
+        </div>
+        <div class="container">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Student Id</label></td>
+                            <td><input type="text" name="p_id" [(ngModel)]="productItem.studentId"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Student Name</label></td>
+                            <td><input type="text" name="p_name" [(ngModel)]="productItem.studentName"/> </td>
+                        </tr>
+                      
+                        <tr>
+                            <td><label>Student Date of Birth</label></td>
+                            <td><input type="date" name="p_date" [(ngModel)]="productItem.studentDob"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Mark in English</label></td>
+                            <td><input type="text" name="p_marke" [(ngModel)]="productItem.markEng"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Mark in Maths</label></td>
+                            <td><input type="text" name="p_markm" [(ngModel)]="productItem.markMath"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Mark in Science</label></td>
+                            <td><input type="text" name="p_marks" [(ngModel)]="productItem.markSci"/> </td>
+                        </tr>
+                        <tr>
+                            <td><label>Student Image Url</label></td>
+                            <td><input type="text" name="p_image" [(ngModel)]="productItem.imageUrl"/> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Submit"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>

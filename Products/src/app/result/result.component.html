@@ -1,0 +1,92 @@
+
+
+
+<div class="container py-5">
+    <div class="row">
+        
+        <div class="col-md-12">
+            <h2 class="text-center text-white mb-4">Here you go !</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <span class="anchor" id="formLogin"></span>
+
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Student Report</h3>
+                        </div>
+                        <table class="table table-hover">
+                          
+                            <tbody>
+                              <tr>
+                                <th scope="row">Photo</th>
+                                <td>
+                                  <img 
+                                  [src] = "student['user'].imageUrl"
+                                  [title] = "student.studentName"
+                                  [style.width.px] = "imageWidth"
+                                  [style.height.px] = "imageHeight"
+                                  [style.margin.px] = "imageMargin">
+                              </td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Student ID</th>
+                                <td>{{student['user'].studentId}}</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Student Name</th>
+                                <td>{{student['user'].studentName}}</td>
+                             
+                              </tr>
+                              <tr>
+                                <th scope="row">Date of Birth</th>
+                                <td >{{student['user'].studentDob}}</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Mark in English</th>
+                                <td >{{student['user'].markEng}}/100</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Mark in Maths</th>
+                                <td >{{student['user'].markMath}}/100</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Mark in Science</th>
+                                <td >{{student['user'].markSci}}/100</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Total Marks</th>
+                                <td >{{student['user'].markEng + student['user'].markMath + student['user'].markSci}}/300</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Percentage</th>
+                                <td >{{((student['user'].markEng + student['user'].markMath + student['user'].markSci)/3).toFixed(2)}}%</td>
+                               
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+</div>
+<!-- /form card login -->
+<button style="margin: 30px;padding: 10px;" routerLink="/studentform">Back</button>
+</div>
+
+
+</div>
+<!--/row-->
+
+</div>
+<!--/col-->
+</div>
+<!--/row-->
+</div>
+<!--/container-->
+
